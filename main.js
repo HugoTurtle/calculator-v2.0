@@ -5,9 +5,9 @@ let divide = (a,b) => a / b;
 
 let operate = (operator,a,b) => {
     switch(operator) {
-        case add : return add(a,b);
-        case subtract : return subtract(a,b);
-        case multiply : return multiply(a,b);
-        case divide : return divide(a,b);
+        case '+' : return add(a,b);
+        case '-' : return subtract(a,b);
+        case '*' : return multiply(a,b);
+        case '/' : return divide(a,b);
     }
 }
