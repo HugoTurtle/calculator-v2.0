@@ -16,6 +16,7 @@ let displayValue = '';
 let operator = '';
 let aNum = '';
 let bNum = '';
+let answer = '';
 const display = document.querySelector('#display');
 
 // Populates the screen of the calculator
@@ -31,28 +32,37 @@ let getButtons = (containerName) => { return buttons = getContainer(containerNam
 function isNumber(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); } 
 
 // Displays and stores the number buttons clicked
-getButtons('left').forEach(button => { button.addEventListener("click", () => {
+getButtons('left').forEach(button => { 
+    button.addEventListener("click", () => {
         isNumber(button.textContent) ? displayScreen(button.textContent) : display.textContent = 'Nan';
         }
     );
 });
  
 // Calculates the operation and displays output
-getButtons('right').forEach(button => { button.addEventListener("click", () => {
-        if(aNum === '') {
-            aNum = displayValue;
-            operator = button.textContent;
-            displayValue = '';
-        } else {
-               bNum = displayValue;
-        }
-        if(button.textContent === '=') {
-            display.textContent = '';
-            let answer = (operate(operator,+aNum,+displayValue)); 
-            display.textContent = answer;
-            aNum = answer;
-            bNum = ''; 
-        }
+getButtons('right').forEach(button => { 
+    button.addEventListener("click", () => {
+            if(button.textContent != '=') {
+                operator = button.textContent;
+            }
+            if(aNum === '') {
+                aNum = displayValue;
+                displayValue = '';
+            }
+            else if(bNum === '') {
+                bNum = displayValue;
+                displayValue = '';
+            }
+
+            if(button.textContent === '=') {
+                display.textContent = '';
+                answer = (operate(operator,+aNum,+bNum)); 
+                display.textContent = answer;
+                aNum = answer;
+                displayValue = '';
+                bNum = '';
+                operator = '';
+            }
         }
     );
 });
