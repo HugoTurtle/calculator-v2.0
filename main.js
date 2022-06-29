@@ -20,17 +20,21 @@ let displayScreen = (button) => {
     displayValue += button;
     display.textContent = displayValue;
 }
-const container = document.querySelector('#left');
-const buttons = container.querySelectorAll('button');
+
+let createContainer = (containerName) => { return container = document.querySelector(`#${containerName}`);}
+let getButtons = (containerName) => { return buttons = createContainer(containerName).querySelectorAll('button');}
 
 function isNumber(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); } 
 
 // Displays the button clicked
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
+getButtons('left').forEach(button => { button.addEventListener("click", () => {
         isNumber(button.textContent) ? displayScreen(button.textContent) : display.textContent = 'Nan';
         }
     );
 });
    
+getButtons('right').forEach(button => { button.addEventListener("click", () => {
 
+    }
+);
+});
