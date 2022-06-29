@@ -21,8 +21,8 @@ let displayScreen = (button) => {
     display.textContent = displayValue;
 }
 
-let createContainer = (containerName) => { return container = document.querySelector(`#${containerName}`);}
-let getButtons = (containerName) => { return buttons = createContainer(containerName).querySelectorAll('button');}
+let getContainer = (containerName) => { return container = document.querySelector(`#${containerName}`);}
+let getButtons = (containerName) => { return buttons = getContainer(containerName).querySelectorAll('button');}
 
 function isNumber(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); } 
 
