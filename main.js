@@ -11,3 +11,24 @@ let operate = (operator,a,b) => {
         case '/' : return divide(a,b);
     }
 }
+
+let displayValue = '';
+const display = document.querySelector('#display');
+
+// Populates the screen of the calculator
+let displayScreen = (button) => {
+    displayValue += button;
+    display.textContent = displayValue;
+}
+const container = document.querySelector('#button-container');
+const buttons = container.querySelectorAll('button');
+
+// Displays the button clicked
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        displayScreen(button.textContent);
+        }
+    );
+});
+   
+
