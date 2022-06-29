@@ -38,7 +38,9 @@ getButtons('left').forEach(button => {
         }
     );
 });
- 
+let limitDecimal = (num) => {
+    return +parseFloat((num).toFixed(6));
+}
 // Calculates the operation and displays output
 getButtons('right').forEach(button => { 
     button.addEventListener("click", () => {
@@ -57,6 +59,10 @@ getButtons('right').forEach(button => {
             if(button.textContent === '=') {
                 display.textContent = '';
                 answer = (operate(operator,+aNum,+bNum)); 
+                //Limit decimal num to 6 place values
+                if(answer > Math.floor(answer)) {
+                    answer = limitDecimal(answer);
+                }
                 display.textContent = answer;
                 aNum = answer;
                 displayValue = '';
