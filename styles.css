@@ -35,7 +35,7 @@ body {
 }
 #button-container #left {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: wrap-reverse;
     justify-content: space-around;
     height: 450px;
     width: 450px;
@@ -45,5 +45,19 @@ body {
 #button-container #left button {
     min-width: 140px;
     max-height: 100px;
+    border-radius: 25px;
+}
+#button-container #right {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    height: 450px;
+    gap: 10px;
+    padding: 10px;
+}
+#button-container #right button {
+    min-width: 101px;
+    min-height: 81px;
     border-radius: 25px;
 }
