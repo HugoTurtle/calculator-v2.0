@@ -20,5 +20,11 @@ body {
     padding: 15px;
 }
 #display {
-    height: 200px;
+    height: 165px;
+    border: black 2px solid;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: 80px;
+    padding: 5px;
 }
