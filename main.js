@@ -74,6 +74,13 @@ getButtons('right').forEach(button => {
 
             if(button.textContent === '=') {
                 display.textContent = '';
+                //No division by 0 allowed
+                if(operator === '/') {
+                    if (bNum === '0') {
+                        alert('Nice try! Dividing by 1:')
+                        bNum = '1';
+                    }
+                }
                 answer = (operate(operator,+aNum,+bNum)); 
                 //Limit decimal num to 6 place values
                 if(answer > Math.floor(answer)) {
