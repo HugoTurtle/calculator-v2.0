@@ -3,9 +3,16 @@
     padding: 0;
 }
 body {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
     padding: 25px;
 }
-h1 {
-    text-align: center;
+#title {
     font-size: 85px;
+}
+#calc-container {
+    width: 650px;
+    height: 635px;
+    background-color: aqua;
 }
