@@ -13,6 +13,12 @@ body {
 }
 #calc-container {
     width: 650px;
-    height: 635px;
+    display: flex;
+    flex-direction: column;
+    height: 620px;
     background-color: aqua;
+    padding: 15px;
+}
+#display {
+    height: 200px;
 }
