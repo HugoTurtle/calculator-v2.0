@@ -7,26 +7,31 @@ body {
     flex-flow: column wrap;
     align-items: center;
     padding: 25px;
+    background-color: #0f0e17;
 }
 #title {
     font-size: 85px;
+    color: #fffffe;
 }
 #calc-container {
     width: 600px;
     display: flex;
     flex-direction: column;
     height: 620px;
-    background-color: aqua;
     padding: 15px;
 }
 #display {
     height: 165px;
-    border: black 2px solid;
     display: flex;
     justify-content: end;
     align-items: end;
     font-size: 80px;
     padding: 5px;
+    color: #fffffe;
+}
+button {
+    background-color: #ff8906;
+    color: #fffffe;
 }
 #button-container {
     display: flex;
@@ -60,4 +65,9 @@ body {
     min-width: 101px;
     min-height: 81px;
     border-radius: 25px;
+    background-color: #f25f4c;
+}
+#button-container #left #clear,
+#button-container #right #\= {
+    background-color: #e53170;
 }
