@@ -31,9 +31,14 @@ let getButtons = (containerName) => { return buttons = getContainer(containerNam
 
 function isNumber(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); } 
 
+document.getElementById("=").disabled = true;
+
 // Displays and stores the number buttons clicked
 getButtons('left').forEach(button => { 
     button.addEventListener("click", () => {
+        if(display.textContent != '') {
+            document.getElementById("=").disabled = false;
+        }
         isNumber(button.textContent) ? displayScreen(button.textContent) : display.textContent = 'Nan';
         }
     );
