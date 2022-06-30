@@ -36,15 +36,26 @@ document.getElementById("=").disabled = true;
 // Displays and stores the number buttons clicked
 getButtons('left').forEach(button => { 
     button.addEventListener("click", () => {
+        //Enables '=' button if there are numbers inputted
         if(display.textContent != '') {
             document.getElementById("=").disabled = false;
         }
-        isNumber(button.textContent) ? displayScreen(button.textContent) : display.textContent = 'Nan';
+        if(button.textContent === 'CLEAR') {
+            clear();
+        }
+        isNumber(button.textContent) ? displayScreen(button.textContent) : display.textContent = '';
         }
     );
 });
 let limitDecimal = (num) => {
     return +parseFloat((num).toFixed(6));
+}
+let clear = () => {
+    displayValue = '';
+    operator = '';
+    aNum = '';
+    bNum = '';
+    answer = '';
 }
 // Calculates the operation and displays output
 getButtons('right').forEach(button => { 
